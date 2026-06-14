@@ -6,10 +6,14 @@ import DataMockup from "./DataMockup";
 
 export default function WindowsTaskbarMockup({ 
   embedded = false, 
-  autoPlay = false 
+  autoPlay = false,
+  cinematicMode = false,
+  cinematicTrigger = false
 }: { 
   embedded?: boolean; 
-  autoPlay?: boolean 
+  autoPlay?: boolean;
+  cinematicMode?: boolean;
+  cinematicTrigger?: boolean;
 }) {
   // Live time for the clock
   const [time, setTime] = useState(new Date());
@@ -83,8 +87,19 @@ export default function WindowsTaskbarMockup({
     return () => window.removeEventListener("click", handleClick);
   }, [isAnimating]);
 
-  // Auto-play Loop for Embedded Hero
+  // Auto-play Loop for Embedded Hero & Cinematic Mode
   useEffect(() => {
+    if (cinematicMode) {
+      if (cinematicTrigger && !isAnimating) {
+        const timer = setTimeout(() => {
+          const btn = document.getElementById("demo-play-btn");
+          if (btn) btn.click();
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+      return;
+    }
+    
     if (!autoPlay) return;
     if (!isAnimating) {
       const timer = setTimeout(() => {
@@ -93,7 +108,7 @@ export default function WindowsTaskbarMockup({
       }, 1000); // Exactly 1 second delay after animation completes
       return () => clearTimeout(timer);
     }
-  }, [autoPlay, isAnimating]);
+  }, [autoPlay, isAnimating, cinematicMode, cinematicTrigger]);
 
   const startDemo = async () => {
     if (isAnimating) return;
