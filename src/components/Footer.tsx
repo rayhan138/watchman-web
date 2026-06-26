@@ -48,6 +48,39 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BlinkEye Promo Card */}
+        <div className="mt-12 bg-[#0c0c0d] border border-white/[0.05] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-white/[0.08] transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start gap-5 max-w-4xl">
+            <div className="p-1 bg-[#fff6ef] rounded-full shrink-0 flex items-center justify-center shadow-lg shadow-black/25">
+              <img
+                src="/blinkeye-icon.png"
+                alt="Blink Eye Logo"
+                className="w-12 h-12 object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="font-play font-bold text-white text-base mb-1.5 tracking-wide flex items-center gap-2">
+                Also try BlinkEye
+              </h3>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                Prevent eye strain, improve posture, and stay productive with Blink Eye!{" "}
+                <span className="text-red-400 font-semibold">Follow the 20-20-20 rule</span> with smart break
+                reminders, screen time tracking, and a built-in task manager—helping you work smarter and
+                feel better every day.
+              </p>
+            </div>
+          </div>
+          <a
+            href="https://blinkeye.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 hover:text-emerald-300 font-bold tracking-wider text-xs flex items-center gap-1.5 whitespace-nowrap self-end md:self-center transition-colors group"
+          >
+            VISIT BLINKEYE.APP
+            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-neutral-400 text-xs">
