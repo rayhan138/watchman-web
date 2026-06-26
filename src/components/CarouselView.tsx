@@ -307,9 +307,9 @@ export default function CarouselView() {
                 className={`absolute top-[15%] left-0 w-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-8 invisible pointer-events-none'}`}
               >
                 <div className="text-emerald-400 text-sm font-bold tracking-[0.3em] uppercase mb-4">App Tour</div>
-                <h1 className="text-6xl font-play font-bold text-white mb-6 tracking-tight drop-shadow-lg">
+                <h2 className="text-6xl font-play font-bold text-white mb-6 tracking-tight drop-shadow-lg">
                   {tab.title}
-                </h1>
+                </h2>
                 <p className="text-xl leading-relaxed text-white/80 font-[500] max-w-[500px] mb-10">
                   {tab.body}
                 </p>
