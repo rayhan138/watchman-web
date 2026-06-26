@@ -38,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:logo" content="https://watchman.blinkeye.app/watchman-logo.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
