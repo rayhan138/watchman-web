@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        play: ['Play', 'sans-serif'],
+        play: ['var(--font-play)', 'sans-serif'],
       },
     },
   },

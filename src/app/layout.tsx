@@ -1,6 +1,12 @@
 import "./globals.css";
 
 import type { Metadata, Viewport } from 'next';
+import { Play, Inter, Nunito_Sans, JetBrains_Mono } from 'next/font/google';
+
+const play = Play({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-play', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'], variable: '--font-inter', display: 'swap' });
+const nunitoSans = Nunito_Sans({ subsets: ['latin'], weight: ['400', '600', '700', '800', '900'], variable: '--font-nunito-sans', display: 'swap' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ['700'], variable: '--font-jetbrains-mono', display: 'swap' });
 
 export const viewport: Viewport = {
   themeColor: '#050505',
@@ -36,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${play.variable} ${inter.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <meta property="og:logo" content="https://watchman.blinkeye.app/watchman-logo.svg" />
         <script

@@ -6,18 +6,17 @@ export default function PreferencesMockup() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: `
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap');
         .watchman-app * { box-sizing: border-box; }
         .watchman-app {
-          font-family: 'Inter', -apple-system, sans-serif;
+          font-family: var(--font-inter), -apple-system, sans-serif;
           -webkit-font-smoothing: antialiased;
           font-weight: 600;
         }
         .watchman-numbers {
-          font-family: 'Nunito Sans', 'Inter', sans-serif;
+          font-family: var(--font-nunito-sans), var(--font-inter), sans-serif;
         }
         .watchman-mono {
-          font-family: 'JetBrains Mono', monospace;
+          font-family: var(--font-jetbrains-mono), monospace;
         }
       `}} />
 
