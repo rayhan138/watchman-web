@@ -120,20 +120,20 @@ export default function AppsMockup() {
 
         {/* Tabs - APPS tab active */}
         <div className="flex items-center px-[12px] h-[48px] shrink-0 border-b border-[#121212] gap-[2px] text-[11px] font-[700] tracking-[0.5px] uppercase relative z-50 bg-transparent">
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <LayoutDashboard size={14} strokeWidth={1.5} />
             Dashboard
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <BarChart2 size={14} strokeWidth={1.5} /> Data
           </div>
           <div className="flex items-center gap-[5px] bg-black text-white px-[12px] py-[6px] rounded-full cursor-pointer">
             <AppWindow size={14} strokeWidth={1.5} /> Apps
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wifi size={14} strokeWidth={1.5} /> Network
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wrench size={14} strokeWidth={1.5} /> Tools
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function AppsMockup() {
               <span className="font-[800] text-[14px] uppercase tracking-[1px] text-[#111]">
                 APP NETWORK ACTIVITY
               </span>
-              <span className="text-[12px] font-[600] text-[#333]">
+              <span className="text-[12px] font-[600] text-[#121212]">
                 Live now and recent background traffic stay listed here for this session.
               </span>
             </div>
@@ -168,10 +168,10 @@ export default function AppsMockup() {
               <table className="w-full border-separate border-spacing-0 text-[11px] table-fixed">
                 <thead className="sticky top-0 z-20 shadow-[0_1px_0_#121212]">
                   <tr>
-                    <th className="text-left py-[10px] pl-[58px] pr-[16px] text-[10px] font-[700] uppercase tracking-[1px] text-[#333] border-b border-[#121212] w-[46%] bg-[#f9fafb] backdrop-blur-md rounded-tl-[15px]">APPLICATION</th>
-                    <th className="text-left py-[10px] px-[10px] text-[10px] font-[700] uppercase tracking-[1px] text-[#333] border-b border-[#121212] w-[20%] bg-[#f9fafb] backdrop-blur-md">↓ DOWN</th>
-                    <th className="text-left py-[10px] px-[10px] text-[10px] font-[700] uppercase tracking-[1px] text-[#333] border-b border-[#121212] w-[20%] bg-[#f9fafb] backdrop-blur-md">↑ UP</th>
-                    <th className="text-right py-[10px] pl-[10px] pr-[24px] text-[10px] font-[700] uppercase tracking-[1px] text-[#333] border-b border-[#121212] w-[14%] bg-[#f9fafb] backdrop-blur-md rounded-tr-[15px]">CONNS</th>
+                    <th className="text-left py-[10px] pl-[58px] pr-[16px] text-[10px] font-[700] uppercase tracking-[1px] text-[#121212] border-b border-[#121212] w-[46%] bg-[#f9fafb] backdrop-blur-md rounded-tl-[15px]">APPLICATION</th>
+                    <th className="text-left py-[10px] px-[10px] text-[10px] font-[700] uppercase tracking-[1px] text-[#121212] border-b border-[#121212] w-[20%] bg-[#f9fafb] backdrop-blur-md">↓ DOWN</th>
+                    <th className="text-left py-[10px] px-[10px] text-[10px] font-[700] uppercase tracking-[1px] text-[#121212] border-b border-[#121212] w-[20%] bg-[#f9fafb] backdrop-blur-md">↑ UP</th>
+                    <th className="text-right py-[10px] pl-[10px] pr-[24px] text-[10px] font-[700] uppercase tracking-[1px] text-[#121212] border-b border-[#121212] w-[14%] bg-[#f9fafb] backdrop-blur-md rounded-tr-[15px]">CONNS</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -234,7 +234,7 @@ export default function AppsMockup() {
         </div>
         
         {/* Status Bar / Footer */}
-        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] relative z-50 bg-transparent uppercase tracking-[1px]">
+        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] relative z-50 bg-transparent uppercase tracking-[1px]">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>
