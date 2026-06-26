@@ -123,9 +123,9 @@ export default function Privacy() {
                 {item.icon}
               </div>
 
-              <h4 className="relative text-white font-bold text-lg mb-3 tracking-tight">
+              <h3 className="relative text-white font-bold text-lg mb-3 tracking-tight">
                 {item.title}
-              </h4>
+              </h3>
               <p className="relative text-neutral-400 text-sm leading-relaxed">
                 {item.description}
               </p>

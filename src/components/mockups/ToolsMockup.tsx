@@ -46,17 +46,17 @@ export default function ToolsMockup() {
 
         {/* Tabs - TOOLS tab active */}
         <div className="flex items-center px-[12px] h-[48px] shrink-0 border-b border-[#121212] gap-[2px] text-[11px] font-[700] tracking-[0.5px] uppercase relative z-50 bg-transparent">
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <LayoutDashboard size={14} strokeWidth={1.5} />
             Dashboard
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <BarChart2 size={14} strokeWidth={1.5} /> Data
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <AppWindow size={14} strokeWidth={1.5} /> Apps
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wifi size={14} strokeWidth={1.5} /> Network
           </div>
           <div className="flex items-center gap-[5px] bg-black text-white px-[12px] py-[6px] rounded-full cursor-pointer">
@@ -75,7 +75,7 @@ export default function ToolsMockup() {
                 <button className="h-[28px] px-[16px] bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[11px] font-[800] uppercase tracking-[0.5px] rounded-[9999px] transition-colors border-none shadow-sm cursor-pointer">Run Diagnostics</button>
               </div>
               <div className="flex flex-col flex-1 justify-center items-center">
-                <div className="text-[#333] text-[13px] italic font-[500]">
+                <div className="text-[#121212] text-[13px] italic font-[500]">
                   Click "Run Diagnostics" to check your network
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function ToolsMockup() {
               </div>
               <div className="flex flex-col p-[16px] border border-[#121212] rounded-[12px] bg-transparent gap-[4px]">
                 <div className="font-[800] text-[12px] uppercase tracking-[1px] text-[#111]">Watchman is up to date</div>
-                <div className="text-[#333] text-[12px] font-[500]">Current version installed</div>
+                <div className="text-[#121212] text-[12px] font-[500]">Current version installed</div>
               </div>
             </div>
           </section>
@@ -144,7 +144,7 @@ export default function ToolsMockup() {
         </div>
 
         {/* Status Bar / Footer */}
-        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] relative z-50 bg-transparent uppercase tracking-[1px]">
+        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] relative z-50 bg-transparent uppercase tracking-[1px]">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>

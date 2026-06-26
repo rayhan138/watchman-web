@@ -67,19 +67,19 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
 
         {/* Tabs - NETWORK tab active */}
         <div className="flex items-center px-[12px] h-[48px] shrink-0 border-b border-[#121212] gap-[2px] text-[11px] font-[700] tracking-[0.5px] uppercase relative z-50 bg-transparent">
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <LayoutDashboard size={14} strokeWidth={1.5} /> Dashboard
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <BarChart2 size={14} strokeWidth={1.5} /> Data
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <AppWindow size={14} strokeWidth={1.5} /> Apps
           </div>
           <div className="flex items-center gap-[5px] bg-black text-white px-[12px] py-[6px] rounded-full cursor-pointer">
             <Wifi size={14} strokeWidth={1.5} /> Network
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wrench size={14} strokeWidth={1.5} /> Tools
           </div>
         </div>
@@ -91,28 +91,28 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
           <div className="flex items-center gap-[16px] p-[16px] px-[20px] border border-[#121212] rounded-[9999px] bg-transparent hover:bg-white/40 transition-colors">
             <div className="w-[32px] h-[32px] rounded-full bg-[#10b981] shrink-0"></div>
             <div className="flex flex-col gap-[1px]">
-              <div className="text-[9px] font-[800] tracking-[1px] uppercase text-[#333]">CONNECTION HEALTH</div>
+              <div className="text-[9px] font-[800] tracking-[1px] uppercase text-[#121212]">CONNECTION HEALTH</div>
               <div className="text-[16px] font-[800] text-[#111]">Stable</div>
-              <div className="text-[10px] text-[#333] watchman-mono mt-[2px] transition-all duration-300">{latency}ms avg · {jitter}ms jitter · 0% loss · Wired</div>
+              <div className="text-[10px] text-[#121212] watchman-mono mt-[2px] transition-all duration-300">{latency}ms avg · {jitter}ms jitter · 0% loss · Wired</div>
             </div>
           </div>
 
           {/* Metrics Row */}
           <div className="grid grid-cols-3 gap-[10px]">
             <div className="border border-[#121212] rounded-[24px] p-[16px] text-center bg-transparent flex flex-col items-center gap-[6px] hover:bg-white/40 transition-colors">
-              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#333] whitespace-nowrap">LATENCY</div>
+              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#121212] whitespace-nowrap">LATENCY</div>
               <div className="watchman-numbers text-[26px] font-[800] tracking-[-0.3px] text-[#111] leading-[1] transition-all duration-300">{latency}ms</div>
-              <div className="text-[10px] font-[700] text-[#333] mt-[2px]">5/5 Replies From 8.8.8.8</div>
+              <div className="text-[10px] font-[700] text-[#121212] mt-[2px]">5/5 Replies From 8.8.8.8</div>
             </div>
             <div className="border border-[#121212] rounded-[24px] p-[16px] text-center bg-transparent flex flex-col items-center gap-[6px] hover:bg-white/40 transition-colors">
-              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#333] whitespace-nowrap">JITTER</div>
+              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#121212] whitespace-nowrap">JITTER</div>
               <div className="watchman-numbers text-[26px] font-[800] tracking-[-0.3px] text-[#111] leading-[1] transition-all duration-300">{jitter}ms</div>
-              <div className="text-[10px] font-[700] text-[#333] mt-[2px] transition-all duration-300">Min {Math.max(1, latency - 11)}ms / Max {latency + 15}ms</div>
+              <div className="text-[10px] font-[700] text-[#121212] mt-[2px] transition-all duration-300">Min {Math.max(1, latency - 11)}ms / Max {latency + 15}ms</div>
             </div>
             <div className="border border-[#121212] rounded-[24px] p-[16px] text-center bg-transparent flex flex-col items-center gap-[6px] hover:bg-white/40 transition-colors">
-              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#333] whitespace-nowrap">PACKET LOSS</div>
+              <div className="text-[10px] font-[800] uppercase tracking-[0.5px] text-[#121212] whitespace-nowrap">PACKET LOSS</div>
               <div className="watchman-numbers text-[26px] font-[800] tracking-[-0.3px] text-[#111] leading-[1]">0%</div>
-              <div className="text-[10px] font-[700] text-[#333] mt-[2px]">0 Of 5 Lost</div>
+              <div className="text-[10px] font-[700] text-[#121212] mt-[2px]">0 Of 5 Lost</div>
             </div>
           </div>
 
@@ -122,19 +122,19 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
             <div className="flex justify-between items-center gap-[16px]">
               <div className="flex-1 flex flex-col gap-[12px]">
                 <div className="flex items-baseline justify-between gap-[14px] pb-[8px] border-b border-black/10">
-                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">TYPE</div>
+                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">TYPE</div>
                   <div className="text-[12px] font-[800] text-[#111] text-right">Ethernet</div>
                 </div>
                 <div className="flex items-baseline justify-between gap-[14px] pb-[8px] border-b border-black/10">
-                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">SSID / ADAPTER</div>
+                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">SSID / ADAPTER</div>
                   <div className="text-[12px] font-[800] text-[#111] text-right">Ethernet 3</div>
                 </div>
                 <div className="flex items-baseline justify-between gap-[14px] pb-[8px] border-b border-black/10">
-                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">LINK SPEED</div>
+                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">LINK SPEED</div>
                   <div className="text-[12px] font-[800] text-[#111] text-right">1000 Mbps</div>
                 </div>
                 <div className="flex items-baseline justify-between gap-[14px]">
-                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">LOCAL IP</div>
+                  <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">LOCAL IP</div>
                   <div className="text-[12px] font-[800] text-[#111] text-right">10.240.12.233</div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
                     <div className="w-[28px] h-[3px] rounded-full bg-[#10b981]"></div>
                   </div>
                 </div>
-                <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333] text-center">WIRED LINK</div>
+                <div className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212] text-center">WIRED LINK</div>
               </div>
             </div>
           </div>
@@ -159,29 +159,29 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
               <button className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-[800] text-[10px] uppercase px-[16px] py-[8px] rounded-[9999px] transition-colors">RUN TEST</button>
             </div>
             
-            <div className="text-[10px] font-[700] text-[#333] leading-[1.4] -mt-[4px]">
+            <div className="text-[10px] font-[700] text-[#121212] leading-[1.4] -mt-[4px]">
               M-Lab may collect public IP and test data for internet research.
             </div>
 
             <div className="flex flex-col gap-[10px] mt-[4px]">
               <div className="flex justify-between items-center pb-[8px] border-b border-black/10">
-                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">DOWNLOAD</span>
+                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">DOWNLOAD</span>
                 <span className="watchman-mono text-[12px] font-[700] text-[#111]">18.4 Mbps (2.31 MB/s)</span>
               </div>
               <div className="flex justify-between items-center pb-[8px] border-b border-black/10">
-                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">UPLOAD</span>
+                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">UPLOAD</span>
                 <span className="watchman-mono text-[12px] font-[700] text-[#111]">25.5 Mbps (3.19 MB/s)</span>
               </div>
               <div className="flex justify-between items-center pb-[8px] border-b border-black/10">
-                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">LATENCY</span>
+                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">LATENCY</span>
                 <span className="watchman-mono text-[12px] font-[700] text-[#111]">70ms</span>
               </div>
               <div className="flex justify-between items-center pb-[8px] border-b border-black/10">
-                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">SERVER</span>
+                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">SERVER</span>
                 <span className="watchman-mono text-[12px] font-[700] text-[#111]">New Delhi, IN · M-Lab NDT7</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#333]">LAST TESTED</span>
+                <span className="text-[10px] font-[800] uppercase tracking-[0.7px] text-[#121212]">LAST TESTED</span>
                 <span className="watchman-mono text-[12px] font-[700] text-[#111]">5/30/2026, 6:16:08 PM</span>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
         </div>
         
         {/* Status Bar / Footer */}
-        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] relative z-50 bg-transparent uppercase tracking-[1px]">
+        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] relative z-50 bg-transparent uppercase tracking-[1px]">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>

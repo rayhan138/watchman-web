@@ -89,16 +89,16 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             <LayoutDashboard size={14} strokeWidth={1.5} />
             Dashboard
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <BarChart2 size={14} strokeWidth={1.5} /> Data
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <AppWindow size={14} strokeWidth={1.5} /> Apps
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wifi size={14} strokeWidth={1.5} /> Network
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wrench size={14} strokeWidth={1.5} /> Tools
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
               </div>
               <div className="flex items-baseline gap-[6px] transition-all duration-300">
                 <span className="watchman-numbers text-[36px] font-[800] tracking-[-1px] leading-none w-[70px] text-right">{downloadSpeed}</span>
-                <span className="font-[700] text-[14px] text-[#333333]">KB/s</span>
+                <span className="font-[700] text-[14px] text-[#121212]">KB/s</span>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
               </div>
               <div className="flex items-baseline gap-[6px] transition-all duration-300">
                 <span className="watchman-numbers text-[36px] font-[800] tracking-[-1px] leading-none w-[70px] text-right">{uploadSpeed}</span>
-                <span className="font-[700] text-[14px] text-[#333333]">KB/s</span>
+                <span className="font-[700] text-[14px] text-[#121212]">KB/s</span>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             <div className="flex justify-between items-center mb-[13px]">
               <div className="flex flex-col gap-[3px]">
                 <span className="font-[900] text-[13px] tracking-[1.2px] uppercase">Current Session</span>
-                <span className="text-[10px] text-[#333333] font-[700]">Since app opened or last reset</span>
+                <span className="text-[10px] text-[#121212] font-[700]">Since app opened or last reset</span>
               </div>
               <div className="bg-black text-white text-[10px] font-[900] tracking-[0.5px] uppercase px-[13px] py-[9px] rounded-full leading-none cursor-pointer hover:bg-[#3b82f6] hover:border-[#3b82f6] transition-colors border border-[#121212]">
                 Reset Session
@@ -147,15 +147,15 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             
             <div className="grid grid-cols-3 gap-[9px]">
               <div className="border-t border-black/5 pt-[10px] flex flex-col gap-[4px]">
-                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#333333]">Download</span>
+                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#121212]">Download</span>
                 <span className="watchman-numbers text-[24px] font-[900] tracking-[-0.6px] leading-none">3.39 GB</span>
               </div>
               <div className="border-t border-black/5 pt-[10px] flex flex-col gap-[4px]">
-                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#333333]">Upload</span>
+                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#121212]">Upload</span>
                 <span className="watchman-numbers text-[24px] font-[900] tracking-[-0.6px] leading-none">549.56 MB</span>
               </div>
               <div className="border-t border-black/5 pt-[10px] flex flex-col gap-[4px]">
-                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#333333]">Total</span>
+                <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#121212]">Total</span>
                 <span className="watchman-numbers text-[24px] font-[900] tracking-[-0.6px] leading-none text-[#3b82f6]">3.93 GB</span>
               </div>
             </div>
@@ -171,19 +171,19 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             </div>
             <div className="grid grid-cols-3 gap-[6px] mb-[6px]">
               <div className="flex flex-col">
-                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#333333] mb-[3px]">Total</span>
+                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#121212] mb-[3px]">Total</span>
                 <span className="watchman-numbers font-[800] text-[24px] tracking-[-0.5px] leading-none">6.97 GB</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#333333] mb-[3px]">↓ Download</span>
+                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#121212] mb-[3px]">↓ Download</span>
                 <span className="watchman-numbers font-[800] text-[24px] tracking-[-0.5px] leading-none">4.88 GB</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#333333] mb-[3px]">↑ Upload</span>
+                <span className="text-[9px] font-[800] tracking-[0.5px] uppercase text-[#121212] mb-[3px]">↑ Upload</span>
                 <span className="watchman-numbers font-[800] text-[24px] tracking-[-0.5px] leading-none">2.09 GB</span>
               </div>
             </div>
-            <div className="text-[10px] font-[700] text-[#333333] mt-2">Updated just now</div>
+            <div className="text-[10px] font-[700] text-[#121212] mt-2">Updated just now</div>
           </div>
 
           {/* NORMAL STATUS */}
@@ -191,7 +191,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             <div className="w-[20px] h-[20px] rounded-full bg-[#10b981] shadow-[0_0_12px_rgba(16,185,129,0.5)] shrink-0 transition-opacity duration-1000" style={{ opacity: cpu > 15 ? 0.5 : 1 }}></div>
             <div className="flex flex-col gap-[2px]">
               <span className="font-[800] text-[14px] tracking-[1px] uppercase leading-none mt-1">Normal</span>
-              <span className="text-[10px] text-[#333333] leading-none mb-1">Network usage is within normal range</span>
+              <span className="text-[10px] text-[#121212] leading-none mb-1">Network usage is within normal range</span>
             </div>
           </div>
 
@@ -207,7 +207,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
                  </div>
               </div>
               <div className="font-[800] text-[13px] uppercase tracking-[1px] mb-[2px]">CPU</div>
-              <div className="font-[700] text-[10px] text-[#333333]">12 cores</div>
+              <div className="font-[700] text-[10px] text-[#121212]">12 cores</div>
             </div>
             
             {/* RAM */}
@@ -220,7 +220,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
                  </div>
               </div>
               <div className="font-[800] text-[13px] uppercase tracking-[1px] mb-[2px]">RAM</div>
-              <div className="font-[700] text-[10px] text-[#333333]">{(ram * 0.139).toFixed(1)} / 13.9 GB</div>
+              <div className="font-[700] text-[10px] text-[#121212]">{(ram * 0.139).toFixed(1)} / 13.9 GB</div>
             </div>
             
             {/* GPU */}
@@ -233,7 +233,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
                  </div>
               </div>
               <div className="font-[800] text-[13px] uppercase tracking-[1px] mb-[2px]">GPU</div>
-              <div className="font-[700] text-[10px] text-[#333333]">3D</div>
+              <div className="font-[700] text-[10px] text-[#121212]">3D</div>
             </div>
           </div>
           
@@ -259,7 +259,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
         </div>
         
         {/* Status Bar / Footer (Sibling to content, flex-shrink-0) */}
-        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] relative z-50 bg-transparent uppercase tracking-[1px]">
+        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] relative z-50 bg-transparent uppercase tracking-[1px]">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>

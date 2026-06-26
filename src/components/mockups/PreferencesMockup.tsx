@@ -45,13 +45,13 @@ export default function PreferencesMockup() {
 
         {/* Fake Tabs */}
         <div className="flex items-center px-[12px] h-[48px] shrink-0 border-b border-[#121212] gap-[2px] text-[11px] font-[700] tracking-[0.5px] uppercase relative z-0 bg-transparent opacity-50">
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full">
             <LayoutDashboard size={14} strokeWidth={1.5} /> Dashboard
           </div>
         </div>
         
         {/* Fake Footer */}
-        <div className="absolute bottom-0 w-full h-[32px] border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] z-0 bg-transparent uppercase tracking-[1px] opacity-50">
+        <div className="absolute bottom-0 w-full h-[32px] border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] z-0 bg-transparent uppercase tracking-[1px] opacity-50">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>

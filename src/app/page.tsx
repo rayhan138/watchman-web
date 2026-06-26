@@ -45,28 +45,28 @@ export default function Home() {
                   WATCHMAN
                 </span>
               </div>
-              <p className="text-neutral-500 text-sm max-w-xs">
+              <p className="text-neutral-400 text-sm max-w-xs">
                 A lightweight, local-first network monitor for Windows and Mac.
               </p>
             </div>
 
             {/* Links */}
             <div className="flex flex-wrap gap-x-4 gap-y-3 items-center mt-6 md:mt-0">
-              <a href="#privacy" className="text-neutral-500 hover:text-white text-sm transition-colors">Privacy</a>
+              <a href="#privacy" className="text-neutral-400 hover:text-white text-sm transition-colors">Privacy</a>
               <span className="text-neutral-800 hidden sm:inline">&middot;</span>
-              <a href="https://github.com/rayhan138/Watchman/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white text-sm transition-colors">License</a>
+              <a href="https://github.com/rayhan138/Watchman/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white text-sm transition-colors">License</a>
               <span className="text-neutral-800 hidden sm:inline">&middot;</span>
-              <a href="https://github.com/rayhan138/Watchman" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white text-sm transition-colors">GitHub</a>
+              <a href="https://github.com/rayhan138/Watchman" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white text-sm transition-colors">GitHub</a>
               <span className="text-neutral-800 hidden sm:inline">&middot;</span>
-              <a href="https://github.com/rayhan138/Watchman/releases" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white text-sm transition-colors">Releases</a>
+              <a href="https://github.com/rayhan138/Watchman/releases" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white text-sm transition-colors">Releases</a>
               <span className="text-neutral-800 hidden sm:inline">&middot;</span>
-              <a href="https://github.com/rayhan138/Watchman/issues/new" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white text-sm transition-colors">Report a Bug</a>
+              <a href="https://github.com/rayhan138/Watchman/issues/new" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white text-sm transition-colors">Report a Bug</a>
             </div>
           </div>
 
           {/* Bottom bar */}
           <div className="mt-12 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-neutral-600 text-xs">
+            <p className="text-neutral-400 text-xs">
               © 2026 Watchman. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
@@ -75,7 +75,7 @@ export default function Home() {
                 href="https://github.com/rayhan138/Watchman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-white transition-colors"
+                className="text-neutral-400 hover:text-white transition-colors"
                 aria-label="GitHub Repository"
               >
                 <svg

@@ -84,20 +84,20 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
 
         {/* Tabs - DATA tab active */}
         <div className="flex items-center px-[12px] h-[48px] shrink-0 border-b border-[#121212] gap-[2px] text-[11px] font-[700] tracking-[0.5px] uppercase relative z-50 bg-transparent">
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <LayoutDashboard size={14} strokeWidth={1.5} />
             Dashboard
           </div>
           <div className="flex items-center gap-[5px] bg-black text-white px-[12px] py-[6px] rounded-full cursor-pointer">
             <BarChart2 size={14} strokeWidth={1.5} /> Data
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <AppWindow size={14} strokeWidth={1.5} /> Apps
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wifi size={14} strokeWidth={1.5} /> Network
           </div>
-          <div className="flex items-center gap-[5px] text-[#333333] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
+          <div className="flex items-center gap-[5px] text-[#121212] px-[12px] py-[6px] rounded-full cursor-pointer hover:bg-white/40 hover:text-black">
             <Wrench size={14} strokeWidth={1.5} /> Tools
           </div>
         </div>
@@ -108,22 +108,22 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
           {/* Period Selector (.du-period-bar) */}
           <div className="flex gap-[4px] bg-transparent border border-[#121212] rounded-[9999px] p-[4px]">
             <button className="flex-1 py-[6px] rounded-[9999px] bg-black text-white text-[12px] font-[800] uppercase tracking-[0.5px]">Daily</button>
-            <button className="flex-1 py-[6px] rounded-[9999px] bg-transparent text-[#333333] hover:bg-white/40 text-[12px] font-[800] uppercase tracking-[0.5px] transition-colors">Weekly</button>
-            <button className="flex-1 py-[6px] rounded-[9999px] bg-transparent text-[#333333] hover:bg-white/40 text-[12px] font-[800] uppercase tracking-[0.5px] transition-colors">Monthly</button>
+            <button className="flex-1 py-[6px] rounded-[9999px] bg-transparent text-[#121212] hover:bg-white/40 text-[12px] font-[800] uppercase tracking-[0.5px] transition-colors">Weekly</button>
+            <button className="flex-1 py-[6px] rounded-[9999px] bg-transparent text-[#121212] hover:bg-white/40 text-[12px] font-[800] uppercase tracking-[0.5px] transition-colors">Monthly</button>
           </div>
 
           {/* Usage Summary Cards (.du-summary-row) */}
           <div className="grid grid-cols-3 gap-[6px]">
             <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px] whitespace-nowrap">Total Usage</div>
+              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px] whitespace-nowrap">Total Usage</div>
               <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{totalGB} GB</div>
             </div>
             <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px] whitespace-nowrap">↓ Download</div>
+              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px] whitespace-nowrap">↓ Download</div>
               <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{downMB.toFixed(2)} MB</div>
             </div>
             <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px] whitespace-nowrap">↑ Upload</div>
+              <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px] whitespace-nowrap">↑ Upload</div>
               <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{upMB.toFixed(2)} MB</div>
             </div>
           </div>
@@ -132,24 +132,24 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
           <div className="border border-[#121212] rounded-[24px] p-[16px] flex flex-col gap-[12px] bg-transparent">
             {/* Filter Buttons */}
             <div className="flex gap-[4px] justify-center border border-[#121212] rounded-[9999px] p-[4px] mx-auto w-full">
-               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#333333] hover:bg-white/40">Today</button>
+               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#121212] hover:bg-white/40">Today</button>
                <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-black text-white">Last 7 Days</button>
-               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#333333] hover:bg-white/40">Monthly</button>
-               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#333333] hover:bg-white/40">Yearly</button>
+               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#121212] hover:bg-white/40">Monthly</button>
+               <button className="flex-1 py-[6px] text-[10px] font-[700] uppercase tracking-[0.5px] rounded-[9999px] bg-transparent text-[#121212] hover:bg-white/40">Yearly</button>
             </div>
 
             {/* Stats Row inside chart panel */}
             <div className="grid grid-cols-3 gap-[6px] mt-[4px]">
               <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px]">Total Traffic</div>
+                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px]">Total Traffic</div>
                 <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{(55.29 + parseFloat(totalGB)).toFixed(2)} GB</div>
               </div>
               <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px]">↓ Download</div>
+                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px]">↓ Download</div>
                 <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{(37.56 + downMB/1024).toFixed(2)} GB</div>
               </div>
               <div className="border border-[#121212] rounded-[16px] p-[12px] text-center bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all">
-                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#333333] mb-[3px]">↑ Upload</div>
+                <div className="text-[9px] font-[800] uppercase tracking-[0.5px] text-[#121212] mb-[3px]">↑ Upload</div>
                 <div className="watchman-numbers text-[18px] font-[800] tracking-[-0.3px] transition-all duration-300">{(17.70 + upMB/1024).toFixed(2)} GB</div>
               </div>
             </div>
@@ -238,23 +238,23 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
 
           {/* Comparison Card */}
           <div className="border border-[#121212] rounded-[16px] p-[16px] bg-transparent flex flex-col gap-[4px] hover:bg-white/40 transition-colors">
-            <div className="text-[9px] font-[800] uppercase tracking-[1px] text-[#333333]">VS PREVIOUS PERIOD</div>
+            <div className="text-[9px] font-[800] uppercase tracking-[1px] text-[#121212]">VS PREVIOUS PERIOD</div>
             <div className="text-[24px] font-[800] text-[#10b981] watchman-numbers tracking-[-0.5px]">↓ 87.2%</div>
-            <div className="text-[10px] font-[600] text-[#333333] mt-[2px] transition-all duration-300">Current: {totalGB} GB / Previous: 9.75 GB</div>
+            <div className="text-[10px] font-[600] text-[#121212] mt-[2px] transition-all duration-300">Current: {totalGB} GB / Previous: 9.75 GB</div>
           </div>
 
           {/* Data Limit Card */}
           <div className="border border-[#121212] rounded-[24px] p-[16px] bg-transparent flex flex-col gap-[12px]">
             <div className="flex justify-between items-center">
               <span className="text-[12px] font-[800] uppercase tracking-[1px]">DATA LIMIT</span>
-              <span className="text-[11px] font-[600] text-[#333333]">No limit set</span>
+              <span className="text-[11px] font-[600] text-[#121212]">No limit set</span>
             </div>
             
             <div className="flex items-center gap-[10px]">
               <div className="flex-1 h-[8px] rounded-[4px] bg-[#e5e7eb] overflow-hidden relative">
                 <div className="h-full bg-[#3b82f6] rounded-[4px] transition-all duration-[2000ms] ease-out absolute left-0 top-0 bottom-0" style={{ width: mounted ? `${(parseFloat(totalGB) / 50) * 100}%` : '0%' }}></div>
               </div>
-              <span className="text-[11px] font-[700] watchman-mono text-right min-w-[36px] text-[#333333]">{(parseFloat(totalGB) / 50 * 100).toFixed(1)}%</span>
+              <span className="text-[11px] font-[700] watchman-mono text-right min-w-[36px] text-[#121212]">{(parseFloat(totalGB) / 50 * 100).toFixed(1)}%</span>
             </div>
             
             <div className="flex gap-[8px] items-center mt-1">
@@ -266,7 +266,7 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
         </div>
         
         {/* Status Bar / Footer (Sibling to content, flex-shrink-0) */}
-        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#333333] relative z-50 bg-transparent uppercase tracking-[1px]">
+        <div className="h-[32px] shrink-0 border-t border-[#121212] flex items-center justify-between px-[16px] text-[10px] font-[700] text-[#121212] relative z-50 bg-transparent uppercase tracking-[1px]">
           <div className="flex items-center gap-[8px]">
              <div className="w-[8px] h-[8px] rounded-full bg-[#10b981] border border-[#10b981]"></div>
              <span className="pt-[1px]">Connected</span>
