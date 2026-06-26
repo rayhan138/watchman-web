@@ -16,6 +16,36 @@ export default function Navbar() {
     requestAnimationFrame(() => setMounted(true));
   }, []);
 
+  // Handle smooth cross-page hash navigation (e.g. going from /blog to /#privacy)
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const targetId = hash.replace("#", "");
+      // Wait for hydration and layout shifts to settle (framer-motion, Tauri mockups, etc.)
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          const navbarHeight = 100; // Account for the floating navbar height
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navbarHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 350);
+    };
+
+    handleHashScroll();
+
+    // Trigger on hash change (e.g. clicking links on the same page)
+    window.addEventListener("hashchange", handleHashScroll);
+    return () => window.removeEventListener("hashchange", handleHashScroll);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const latest = window.scrollY;
