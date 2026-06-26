@@ -107,10 +107,10 @@ export default function ToolsMockup() {
                   <label className="text-[12px] font-[700] uppercase tracking-[1px] text-[#111]">Format</label>
                   <span className="px-[16px] py-[6px] border border-[#121212] rounded-[9999px] bg-[#111] text-white text-[11px] font-[800] tracking-[0.5px]">CSV Only</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <label className="text-[12px] font-[700] uppercase tracking-[1px] text-[#111]">Period</label>
+                 <div className="flex items-center justify-between">
+                  <label htmlFor="export-period" className="text-[12px] font-[700] uppercase tracking-[1px] text-[#111]">Period</label>
                   <div className="relative">
-                    <select defaultValue="monthly" className="min-w-[180px] h-[32px] px-[16px] pr-[32px] border border-[#121212] rounded-[9999px] bg-transparent text-[11px] font-[800] uppercase tracking-[0.5px] text-[#111] appearance-none outline-none cursor-pointer">
+                    <select id="export-period" defaultValue="monthly" className="min-w-[180px] h-[32px] px-[16px] pr-[32px] border border-[#121212] rounded-[9999px] bg-transparent text-[11px] font-[800] uppercase tracking-[0.5px] text-[#111] appearance-none outline-none cursor-pointer">
                       <option value="monthly">Monthly</option>
                     </select>
                     <div className="absolute right-[12px] top-1/2 -translate-y-1/2 pointer-events-none">
@@ -121,9 +121,9 @@ export default function ToolsMockup() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <label className="text-[12px] font-[700] uppercase tracking-[1px] text-[#111]">Year</label>
+                  <label htmlFor="export-year" className="text-[12px] font-[700] uppercase tracking-[1px] text-[#111]">Year</label>
                   <div className="relative">
-                    <select defaultValue="2026" className="min-w-[180px] h-[32px] px-[16px] pr-[32px] border border-[#121212] rounded-[9999px] bg-transparent text-[11px] font-[800] uppercase tracking-[0.5px] text-[#111] appearance-none outline-none cursor-pointer">
+                    <select id="export-year" defaultValue="2026" className="min-w-[180px] h-[32px] px-[16px] pr-[32px] border border-[#121212] rounded-[9999px] bg-transparent text-[11px] font-[800] uppercase tracking-[0.5px] text-[#111] appearance-none outline-none cursor-pointer">
                       <option value="2026">2026</option>
                     </select>
                     <div className="absolute right-[12px] top-1/2 -translate-y-1/2 pointer-events-none">

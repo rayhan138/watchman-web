@@ -68,7 +68,7 @@ export default function PreferencesMockup() {
             {/* Header */}
             <div className="flex items-center justify-between mb-[16px]">
               <h2 className="text-[16px] font-[800] text-[#111] tracking-[0.5px]">Preferences</h2>
-              <button className="text-[#111] hover:bg-black/5 p-[4px] -mr-[4px] rounded-full transition-colors"><X size={16} strokeWidth={2.5}/></button>
+              <button aria-label="Close preferences" className="text-[#111] hover:bg-black/5 p-[4px] -mr-[4px] rounded-full transition-colors"><X size={16} strokeWidth={2.5}/></button>
             </div>
 
             {/* Top Toggles */}
@@ -99,8 +99,8 @@ export default function PreferencesMockup() {
 
             {/* Data Limit */}
             <div className="flex items-center justify-between">
-              <span className="text-[13px] font-[600] text-[#111]">Monthly Data Limit (GB)</span>
-              <input type="text" placeholder="0 = nor" className="w-[84px] h-[26px] rounded-[12px] border border-[#111] px-[8px] text-center text-[11px] text-[#666] outline-none font-mono placeholder-[#666] bg-transparent" />
+              <label htmlFor="monthly-data-limit" className="text-[13px] font-[600] text-[#111] cursor-pointer">Monthly Data Limit (GB)</label>
+              <input id="monthly-data-limit" type="text" placeholder="0 = nor" className="w-[84px] h-[26px] rounded-[12px] border border-[#111] px-[8px] text-center text-[11px] text-[#666] outline-none font-mono placeholder-[#666] bg-transparent" />
             </div>
 
             <div className="h-[1px] bg-[#e5e7eb] w-full my-[16px]"></div>
@@ -115,13 +115,13 @@ export default function PreferencesMockup() {
               {/* Traffic Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">Today's Traffic</span>
+                  <label htmlFor="today-traffic-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">Today's Traffic</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="500" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="today-traffic-limit" type="text" defaultValue="500" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <div className="relative">
-                    <select className="h-[26px] pl-[10px] pr-[22px] rounded-[12px] border border-[#111] text-[11px] font-[700] text-[#111] outline-none appearance-none bg-transparent cursor-pointer font-mono">
+                    <select aria-label="Today's traffic warning unit" className="h-[26px] pl-[10px] pr-[22px] rounded-[12px] border border-[#111] text-[11px] font-[700] text-[#111] outline-none appearance-none bg-transparent cursor-pointer font-mono">
                       <option>MB</option>
                       <option>GB</option>
                     </select>
@@ -138,11 +138,11 @@ export default function PreferencesMockup() {
               {/* Memory Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">Memory Usage</span>
+                  <label htmlFor="memory-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">Memory Usage</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="memory-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">%</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -153,11 +153,11 @@ export default function PreferencesMockup() {
               {/* CPU Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">CPU Temperature</span>
+                  <label htmlFor="cpu-temp-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">CPU Temperature</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="cpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -168,11 +168,11 @@ export default function PreferencesMockup() {
               {/* GPU Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">GPU Temperature</span>
+                  <label htmlFor="gpu-temp-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">GPU Temperature</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="gpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -183,11 +183,11 @@ export default function PreferencesMockup() {
               {/* Disk Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">Disk Temperature</span>
+                  <label htmlFor="disk-temp-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">Disk Temperature</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="disk-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -198,11 +198,11 @@ export default function PreferencesMockup() {
               {/* Mainboard Row */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[6px]">
-                  <span className="text-[12px] font-[700] text-[#222]">Mainboard Temperature</span>
+                  <label htmlFor="mainboard-temp-limit" className="text-[12px] font-[700] text-[#222] cursor-pointer">Mainboard Temperature</label>
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="mainboard-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>

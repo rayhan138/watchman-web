@@ -76,6 +76,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-600 hover:text-white transition-colors"
+                aria-label="GitHub Repository"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
