@@ -48,9 +48,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "App Tour", href: "#app-tour" },
-    { label: "Privacy", href: "#privacy" },
+    { label: "Features", href: "/#features" },
+    { label: "App Tour", href: "/#app-tour" },
+    { label: "Privacy", href: "/#privacy" },
     { label: "Blog", href: "/blog" },
   ];
 
