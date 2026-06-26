@@ -51,12 +51,46 @@ export default function Footer() {
         {/* BlinkEye Promo Card */}
         <div className="mt-12 bg-[#0c0c0d] border border-white/[0.05] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-white/[0.08] transition-all duration-300">
           <div className="flex flex-col sm:flex-row items-start gap-5 max-w-4xl">
-            <div className="p-1 bg-[#fff6ef] rounded-full shrink-0 flex items-center justify-center shadow-lg shadow-black/25">
-              <img
-                src="/blinkeye-icon.png"
-                alt="Blink Eye Logo"
-                className="w-12 h-12 object-contain"
-              />
+            <div className="shrink-0 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-14 h-14 select-none drop-shadow-[0_0_12px_rgba(255,77,90,0.22)]">
+                <defs>
+                  <filter id="eye-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="2.5" stdDeviation="1.5" floodColor="#000000" floodOpacity="0.18" />
+                  </filter>
+                </defs>
+
+                <style dangerouslySetInnerHTML={{ __html: `
+                  @keyframes logo-blink {
+                    0%, 8%, 18%, 26%, 100% { transform: scale(1, 1); }
+                    4%, 22% { transform: scale(1.1, 0); }
+                  }
+                `}} />
+
+                {/* Outer Organic Red Blob */}
+                <path 
+                  d="M 50 8 C 72 6, 92 24, 94 49 C 96 74, 80 92, 50 92 C 20 92, 4 74, 6 49 C 8 24, 28 10, 50 8 Z" 
+                  fill="#ff4d5a" 
+                />
+
+                {/* Blinking Eyeball Group */}
+                <g 
+                  className="animate-[logo-blink_5s_cubic-bezier(0.25,0.8,0.25,1)_infinite]"
+                  style={{ transformOrigin: '50px 50px' }}
+                >
+                  {/* White Eyeball with Shadow */}
+                  <path 
+                    d="M 50 22 C 66 20, 80 34, 81 51 C 82 68, 71 81, 50 81 C 29 81, 18 68, 19 51 C 20 34, 34 24, 50 22 Z" 
+                    fill="#ffffff" 
+                    filter="url(#eye-shadow)"
+                  />
+                  
+                  {/* Black Pupil */}
+                  <circle cx="44" cy="54" r="18" fill="#0c0c0d" />
+                  
+                  {/* White Highlight */}
+                  <circle cx="37" cy="46" r="4.5" fill="#ffffff" />
+                </g>
+              </svg>
             </div>
             <div>
               <h3 className="font-play font-bold text-white text-base mb-1.5 tracking-wide flex items-center gap-2">
