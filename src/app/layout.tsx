@@ -9,14 +9,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://watchman.blinkeye.app'),
   title: "Watchman - Know where your internet is going.",
-  description: "Take full control of your local network with Watchman. Monitor traffic, manage connected devices, and secure your environment—all from a beautiful dashboard.",
+  description: "See live per-app bandwidth monitoring, track active background tasks, and see exactly what is consuming your data—all from a lightweight taskbar widget.",
   alternates: {
     canonical: '/',
   },
   manifest: '/site.webmanifest',
   openGraph: {
     title: "Watchman - Know where your internet is going.",
-    description: "Take full control of your local network with Watchman. Monitor traffic and manage devices.",
+    description: "See live per-app bandwidth monitoring, track active background tasks, and see exactly what is consuming your data.",
     siteName: "Watchman",
     type: "website",
     url: '/',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@blinkeye",
     title: "Watchman - Know where your internet is going.",
-    description: "Take full control of your local network with Watchman. Monitor traffic and manage devices.",
+    description: "See live per-app bandwidth monitoring, track active background tasks, and see exactly what is consuming your data.",
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Watchman - Know where your internet is going.",
-              "description": "Take full control of your local network with Watchman. Monitor traffic, manage connected devices, and secure your environment—all from a beautiful dashboard.",
+              "description": "See live per-app bandwidth monitoring, track active background tasks, and see exactly what is consuming your data—all from a lightweight taskbar widget.",
               "url": "https://watchman.blinkeye.app"
             })
           }}
