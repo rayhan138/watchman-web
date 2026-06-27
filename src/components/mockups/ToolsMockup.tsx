@@ -72,7 +72,7 @@ export default function ToolsMockup() {
             <div className="flex flex-col p-[20px] border border-[#121212] rounded-[16px] bg-transparent h-[120px]">
               <div className="flex items-center justify-between">
                 <span className="font-[800] text-[13px] uppercase tracking-[1px] text-[#111]">Network Troubleshooter</span>
-                <button className="h-[28px] px-[16px] bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[11px] font-[800] uppercase tracking-[0.5px] rounded-[9999px] transition-colors border-none shadow-sm cursor-pointer">Run Diagnostics</button>
+                <button className="h-[28px] px-[16px] bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-[11px] font-[800] uppercase tracking-[0.5px] rounded-[9999px] transition-colors border-none shadow-sm cursor-pointer">Run Diagnostics</button>
               </div>
               <div className="flex flex-col flex-1 justify-center items-center">
                 <div className="text-[#121212] text-[13px] italic font-[500]">
@@ -87,7 +87,7 @@ export default function ToolsMockup() {
             <div className="flex flex-col p-[20px] border border-[#121212] rounded-[16px] bg-transparent gap-[16px]">
               <div className="flex items-center justify-between">
                 <span className="font-[800] text-[13px] uppercase tracking-[1px] text-[#111]">Updates</span>
-                <button className="h-[28px] px-[16px] bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[11px] font-[800] uppercase tracking-[0.5px] rounded-[9999px] transition-colors border-none shadow-sm cursor-pointer">Check for Updates</button>
+                <button className="h-[28px] px-[16px] bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-[11px] font-[800] uppercase tracking-[0.5px] rounded-[9999px] transition-colors border-none shadow-sm cursor-pointer">Check for Updates</button>
               </div>
               <div className="flex flex-col p-[16px] border border-[#121212] rounded-[12px] bg-transparent gap-[4px]">
                 <div className="font-[800] text-[12px] uppercase tracking-[1px] text-[#111]">Watchman is up to date</div>

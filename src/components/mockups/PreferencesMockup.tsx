@@ -100,7 +100,7 @@ export default function PreferencesMockup() {
             {/* Data Limit */}
             <div className="flex items-center justify-between">
               <label htmlFor="monthly-data-limit" className="text-[13px] font-[600] text-[#111] cursor-pointer">Monthly Data Limit (GB)</label>
-              <input id="monthly-data-limit" type="text" placeholder="0 = nor" className="w-[84px] h-[26px] rounded-[12px] border border-[#111] px-[8px] text-center text-[11px] text-[#666] outline-none font-mono placeholder-[#666] bg-transparent" />
+              <input id="monthly-data-limit" type="text" placeholder="0 = nor" className="w-[84px] h-[36px] rounded-[12px] border border-[#111] px-[8px] text-center text-[11px] text-[#666] outline-none font-mono placeholder-[#666] bg-transparent" />
             </div>
 
             <div className="h-[1px] bg-[#e5e7eb] w-full my-[16px]"></div>
@@ -119,9 +119,9 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="today-traffic-limit" type="text" defaultValue="500" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="today-traffic-limit" type="text" defaultValue="500" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <div className="relative">
-                    <select aria-label="Today's traffic warning unit" className="h-[26px] pl-[10px] pr-[22px] rounded-[12px] border border-[#111] text-[11px] font-[700] text-[#111] outline-none appearance-none bg-transparent cursor-pointer font-mono">
+                    <select aria-label="Today's traffic warning unit" className="h-[36px] pl-[10px] pr-[22px] rounded-[12px] border border-[#111] text-[11px] font-[700] text-[#111] outline-none appearance-none bg-transparent cursor-pointer font-mono">
                       <option>MB</option>
                       <option>GB</option>
                     </select>
@@ -142,7 +142,7 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="memory-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="memory-limit" type="text" defaultValue="80" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">%</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -157,7 +157,7 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="cpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="cpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -172,7 +172,7 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="gpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="gpu-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -187,7 +187,7 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="disk-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="disk-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -202,7 +202,7 @@ export default function PreferencesMockup() {
                   <span className="text-[12px] font-[600] text-[#666]">hits</span>
                 </div>
                 <div className="flex items-center gap-[8px]">
-                  <input id="mainboard-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[26px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
+                  <input id="mainboard-temp-limit" type="text" defaultValue="80" className="w-[50px] h-[36px] rounded-[12px] border border-[#111] text-center text-[12px] font-[600] text-[#111] outline-none bg-transparent font-mono" />
                   <span className="text-[12px] font-[700] text-[#111] w-[26px] text-center">°C</span>
                   <div className="w-[38px] h-[22px] rounded-full bg-[#10b981] relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] ml-[4px] border border-[#10b981]">
                     <div className="absolute right-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full shadow-sm"></div>
@@ -222,13 +222,13 @@ export default function PreferencesMockup() {
               <div className="text-[10px] font-[700] text-[#6b7280]">Watchman v1.0.1</div>
               
               <div className="flex items-center gap-[12px]">
-                <button className="h-[42px] px-[20px] bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[10px] font-[800] rounded-[21px] transition-colors border-none flex items-center justify-center text-center shadow-sm whitespace-nowrap tracking-[0.5px]">
+                <button className="h-[42px] px-[20px] bg-[#1d4ed8] hover:bg-[#1e40af] text-white text-[10px] font-[800] rounded-[21px] transition-colors border-none flex items-center justify-center text-center shadow-sm whitespace-nowrap tracking-[0.5px]">
                   <span className="leading-[1.1]">USE<br/>RECOMMENDED</span>
                 </button>
-                <button className="h-[42px] px-[20px] bg-white hover:bg-gray-50 text-[#888] text-[11px] font-[800] uppercase tracking-[1px] rounded-[21px] transition-colors border border-[#d1d5db] flex items-center justify-center shadow-sm">
+                <button className="h-[42px] px-[20px] bg-white hover:bg-gray-50 text-[#4b5563] text-[11px] font-[800] uppercase tracking-[1px] rounded-[21px] transition-colors border border-[#d1d5db] flex items-center justify-center shadow-sm">
                   UNDO
                 </button>
-                <button className="h-[42px] flex-1 bg-[#888] text-white text-[13px] font-[800] uppercase tracking-[1.5px] rounded-[21px] transition-colors border-none flex items-center justify-center shadow-md cursor-not-allowed">
+                <button className="h-[42px] flex-1 bg-[#4b5563] text-white text-[13px] font-[800] uppercase tracking-[1.5px] rounded-[21px] transition-colors border-none flex items-center justify-center shadow-md cursor-not-allowed">
                   SAVE
                 </button>
               </div>

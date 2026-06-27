@@ -79,18 +79,18 @@ export default function AppsMockup() {
         }
         
         .speed-inactive {
-          color: #9ca3af;
-          font-weight: 500;
+          color: #4b5563;
+          font-weight: 600;
         }
         .speed-active-down {
-          color: #3b82f6;
+          color: #1d4ed8;
           font-weight: 700;
-          text-shadow: 0 0 8px rgba(59, 130, 246, 0.35);
+          text-shadow: 0 0 8px rgba(29, 78, 216, 0.25);
         }
         .speed-active-up {
-          color: #10b981;
+          color: #047857;
           font-weight: 700;
-          text-shadow: 0 0 8px rgba(16, 185, 129, 0.35);
+          text-shadow: 0 0 8px rgba(4, 120, 87, 0.25);
         }
       `}} />
 

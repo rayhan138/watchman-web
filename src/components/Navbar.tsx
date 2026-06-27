@@ -307,6 +307,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="text-white/60 hover:text-white transition-colors p-1 rounded-full hover:bg-white/[0.06]"
+            aria-label="Open navigation menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +327,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
+ 
       {/* ── Fullscreen Mobile Menu Overlay ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -340,6 +341,7 @@ export default function Navbar() {
             <button 
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-8 right-8 text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+              aria-label="Close navigation menu"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>

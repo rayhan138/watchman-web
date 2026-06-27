@@ -252,14 +252,14 @@ export default function DataMockup({ isActive = true }: { isActive?: boolean }) 
             
             <div className="flex items-center gap-[10px]">
               <div className="flex-1 h-[8px] rounded-[4px] bg-[#e5e7eb] overflow-hidden relative">
-                <div className="h-full bg-[#3b82f6] rounded-[4px] transition-all duration-[2000ms] ease-out absolute left-0 top-0 bottom-0" style={{ width: mounted ? `${(parseFloat(totalGB) / 50) * 100}%` : '0%' }}></div>
+                <div className="h-full bg-[#1d4ed8] rounded-[4px] transition-all duration-[2000ms] ease-out absolute left-0 top-0 bottom-0" style={{ width: mounted ? `${(parseFloat(totalGB) / 50) * 100}%` : '0%' }}></div>
               </div>
               <span className="text-[11px] font-[700] watchman-mono text-right min-w-[36px] text-[#121212]">{(parseFloat(totalGB) / 50 * 100).toFixed(1)}%</span>
             </div>
             
             <div className="flex gap-[8px] items-center mt-1">
               <input type="text" placeholder="Limit in GB" className="flex-1 px-[10px] py-[8px] border border-[#121212] rounded-[8px] bg-transparent text-black watchman-mono text-[12px] outline-none" />
-              <button className="bg-[#3b82f6] text-white font-[800] text-[11px] uppercase px-[16px] py-[9px] rounded-[8px] hover:bg-[#2563eb] transition-colors">SET LIMIT</button>
+              <button className="bg-[#1d4ed8] text-white font-[800] text-[11px] uppercase px-[16px] py-[9px] rounded-[8px] hover:bg-[#1e40af] transition-colors">SET LIMIT</button>
             </div>
           </div>
 

@@ -111,7 +111,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             {/* DOWNLOAD */}
             <div className="rounded-[9999px] border border-[#121212] flex items-center justify-between px-[20px] py-[14px] bg-transparent hover:-translate-y-[2px] hover:bg-white/40 transition-all cursor-default">
               <div className="flex items-center gap-[14px]">
-                <span className="text-[24px] font-[700] text-[#3b82f6]">↓</span>
+                <span className="text-[24px] font-[700] text-[#1d4ed8]">↓</span>
                 <span className="font-[800] text-[13px] uppercase tracking-[1px]">Download</span>
               </div>
               <div className="flex items-baseline gap-[6px] transition-all duration-300">
@@ -140,7 +140,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
                 <span className="font-[900] text-[13px] tracking-[1.2px] uppercase">Current Session</span>
                 <span className="text-[10px] text-[#121212] font-[700]">Since app opened or last reset</span>
               </div>
-              <div className="bg-black text-white text-[10px] font-[900] tracking-[0.5px] uppercase px-[13px] py-[9px] rounded-full leading-none cursor-pointer hover:bg-[#3b82f6] hover:border-[#3b82f6] transition-colors border border-[#121212]">
+              <div className="bg-black text-white text-[10px] font-[900] tracking-[0.5px] uppercase px-[13px] py-[9px] rounded-full leading-none cursor-pointer hover:bg-[#1d4ed8] hover:border-[#1d4ed8] transition-colors border border-[#121212]">
                 Reset Session
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
               </div>
               <div className="border-t border-black/5 pt-[10px] flex flex-col gap-[4px]">
                 <span className="text-[9px] font-[900] tracking-[0.8px] uppercase text-[#121212]">Total</span>
-                <span className="watchman-numbers text-[24px] font-[900] tracking-[-0.6px] leading-none text-[#3b82f6]">3.93 GB</span>
+                <span className="watchman-numbers text-[24px] font-[900] tracking-[-0.6px] leading-none text-[#1d4ed8]">3.93 GB</span>
               </div>
             </div>
           </div>

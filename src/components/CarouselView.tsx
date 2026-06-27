@@ -388,7 +388,7 @@ export default function CarouselView() {
                     }
                   }
                 }}
-                className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${mobileActiveIndex === idx ? "bg-emerald-400 w-6" : "bg-white/20 w-2"}`}
+                className={`relative h-2 rounded-full transition-all duration-500 cursor-pointer ${mobileActiveIndex === idx ? "bg-emerald-400 w-6" : "bg-white/20 w-2"} after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-12 after:h-12`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
