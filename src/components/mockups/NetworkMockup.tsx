@@ -156,7 +156,7 @@ export default function NetworkMockup({ isActive = true }: { isActive?: boolean 
           <div className="border border-[#121212] rounded-[24px] p-[16px] bg-transparent flex flex-col gap-[14px] mb-[20px]">
             <div className="flex justify-between items-center">
               <span className="text-[12px] font-[800] uppercase tracking-[1px] text-[#111]">SPEED TEST</span>
-              <button className="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-[800] text-[10px] uppercase px-[16px] py-[8px] rounded-[9999px] transition-colors">RUN TEST</button>
+              <button className="bg-[#1d4ed8] hover:bg-[#1e40af] text-white font-[800] text-[10px] uppercase px-[16px] py-[8px] rounded-[9999px] transition-colors">RUN TEST</button>
             </div>
             
             <div className="text-[10px] font-[700] text-[#121212] leading-[1.4] -mt-[4px]">

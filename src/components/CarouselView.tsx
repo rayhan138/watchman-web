@@ -97,6 +97,7 @@ export default function CarouselView() {
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const swipeContainerRef = useRef<HTMLDivElement>(null);
   const [hasSwiped, setHasSwiped] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const handleMobileScroll = () => {
     if (!swipeContainerRef.current) return;
@@ -115,6 +116,7 @@ export default function CarouselView() {
 
   // Track viewport size to handle mobile vs desktop layout
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -125,7 +127,7 @@ export default function CarouselView() {
 
   // Initialize Lenis for smooth scrolling (Desktop ONLY)
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (!mounted || isMobile) return;
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -148,11 +150,11 @@ export default function CarouselView() {
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [isMobile, mounted]);
 
   // Initialize GSAP ScrollTrigger for Mockups ONLY (Desktop ONLY)
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (!mounted || isMobile) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -274,7 +276,11 @@ export default function CarouselView() {
       ctx.revert();
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, []);
+  }, [isMobile, mounted]);
+
+  if (!mounted) {
+    return <div className="w-full min-h-screen bg-transparent" id="app-tour" />;
+  }
 
   return (
     <div className="w-full bg-transparent text-white overflow-x-hidden font-sans relative">
@@ -382,9 +388,11 @@ export default function CarouselView() {
                     }
                   }
                 }}
-                className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${mobileActiveIndex === idx ? "bg-emerald-400 w-6" : "bg-white/20 w-2"}`}
+                className={`relative h-2 rounded-full transition-all duration-500 cursor-pointer ${mobileActiveIndex === idx ? "bg-emerald-400 w-6" : "bg-white/20 w-2"} after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-12 after:h-12`}
                 aria-label={`Go to slide ${idx + 1}`}
-              />
+              >
+                <span className="sr-only">Go to slide {idx + 1}</span>
+              </button>
             ))}
           </div>
         </div>

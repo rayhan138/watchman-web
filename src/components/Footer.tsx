@@ -14,6 +14,8 @@ export default function Footer() {
               <img
                 src="/watchman-logo.svg"
                 alt="Watchman Logo"
+                width={28}
+                height={28}
                 className="h-7 w-auto"
               />
               <span className="font-bold tracking-[0.2em] text-white text-sm">
