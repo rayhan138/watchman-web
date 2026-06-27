@@ -200,7 +200,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             {/* CPU */}
             <div className="rounded-[24px] border border-[#121212] py-[16px] px-[10px] flex flex-col items-center text-center bg-transparent hover:bg-white/40 hover:-translate-y-[2px] transition-all">
               <div className="w-[56px] h-[56px] rounded-full border border-[#121212] flex items-center justify-center mb-[10px] relative overflow-hidden shrink-0">
-                 <div className="absolute bottom-0 left-0 right-0 transition-all duration-1000 ease-out" style={{ height: `${cpu}%`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.10) 100%)' }}></div>
+                 <div className="absolute bottom-0 left-0 right-0 h-full origin-bottom transition-transform duration-1000 ease-out will-change-transform" style={{ transform: `scaleY(${cpu / 100})`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.10) 100%)' }}></div>
                  <div className="relative z-10 flex items-center transition-all duration-300">
                     <span className="watchman-numbers font-[800] text-[22px] tracking-[-0.5px] w-[26px]">{cpu}</span>
                     <span className="font-[700] text-[12px]">%</span>
@@ -213,7 +213,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             {/* RAM */}
             <div className="rounded-[24px] border border-[#121212] py-[16px] px-[10px] flex flex-col items-center text-center bg-transparent hover:bg-white/40 hover:-translate-y-[2px] transition-all">
               <div className="w-[56px] h-[56px] rounded-full border border-[#121212] flex items-center justify-center mb-[10px] relative overflow-hidden shrink-0">
-                 <div className="absolute bottom-0 left-0 right-0 transition-all duration-1000 ease-out" style={{ height: `${ram}%`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.15) 100%)' }}></div>
+                 <div className="absolute bottom-0 left-0 right-0 h-full origin-bottom transition-transform duration-1000 ease-out will-change-transform" style={{ transform: `scaleY(${ram / 100})`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.15) 100%)' }}></div>
                  <div className="relative z-10 flex items-center transition-all duration-300">
                     <span className="watchman-numbers font-[800] text-[22px] tracking-[-0.5px] w-[26px]">{ram}</span>
                     <span className="font-[700] text-[12px]">%</span>
@@ -226,7 +226,7 @@ export default function DashboardMockup({ isActive = true }: { isActive?: boolea
             {/* GPU */}
             <div className="rounded-[24px] border border-[#121212] py-[16px] px-[10px] flex flex-col items-center text-center bg-transparent hover:bg-white/40 hover:-translate-y-[2px] transition-all">
               <div className="w-[56px] h-[56px] rounded-full border border-[#121212] flex items-center justify-center mb-[10px] relative overflow-hidden shrink-0">
-                 <div className="absolute bottom-0 left-0 right-0 transition-all duration-1000 ease-out" style={{ height: `${gpu}%`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.20) 100%)' }}></div>
+                 <div className="absolute bottom-0 left-0 right-0 h-full origin-bottom transition-transform duration-1000 ease-out will-change-transform" style={{ transform: `scaleY(${gpu / 100})`, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.20) 100%)' }}></div>
                  <div className="relative z-10 flex items-center transition-all duration-300">
                     <span className="watchman-numbers font-[800] text-[22px] tracking-[-0.5px] w-[26px]">{gpu}</span>
                     <span className="font-[700] text-[12px]">%</span>

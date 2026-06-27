@@ -24,11 +24,15 @@ export default function CTA() {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto px-6"
       >
-        <div className="relative overflow-hidden rounded-[40px] border border-emerald-500/20 p-12 md:p-20 text-center shadow-[0_0_100px_rgba(16,185,129,0.12)] gradient-shift"
+        <div className="relative overflow-hidden rounded-[40px] border border-emerald-500/20 p-12 md:p-20 text-center shadow-[0_0_100px_rgba(16,185,129,0.12)]"
           style={{
             background: "linear-gradient(135deg, #0d2818 0%, #061210 40%, #030303 100%)",
           }}
         >
+          {/* Composited gradient overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[40px]">
+            <div className="absolute inset-0 w-[200%] gradient-shift-layer" style={{ background: 'linear-gradient(135deg, transparent 0%, rgba(16,185,129,0.06) 25%, transparent 50%, rgba(16,185,129,0.04) 75%, transparent 100%)' }} />
+          </div>
           {/* Inner glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
 

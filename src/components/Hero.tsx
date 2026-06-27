@@ -66,9 +66,9 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
             className="text-5xl sm:text-6xl md:text-[5.5rem] font-black tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-neutral-500 uppercase"
             style={{ lineHeight: "0.92" }}
           >

@@ -59,9 +59,19 @@ html, body, * {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.gradient-shift-layer {
+  animation: gradientShift 8s ease infinite;
+  will-change: transform;
+}
+
+/* Legacy: keep for any remaining usage, now a no-op visually */
+.gradient-shift {
+  background-size: 200% 200%;
 }
 
 @keyframes fadeInGrid {
@@ -74,10 +84,6 @@ html, body, * {
 .blob-drift-3 { animation: blobDrift3 18s ease-in-out infinite; }
 .hero-float { animation: floatUp 6s ease-in-out infinite; }
 .glow-pulse { animation: pulseGlow 4s ease-in-out infinite; }
-.gradient-shift {
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
-}
 .grid-fade { animation: fadeInGrid 2s ease forwards; }
 
 /* === Blog Typography (watchman-blog-prose) === */
