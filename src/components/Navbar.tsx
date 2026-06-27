@@ -154,6 +154,8 @@ export default function Navbar() {
           <img
             src="/watchman-logo.svg"
             alt="Watchman"
+            width={16}
+            height={16}
             style={{ height: "16px", width: "auto" }}
           />
           <span
