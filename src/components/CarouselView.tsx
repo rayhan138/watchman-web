@@ -97,6 +97,7 @@ export default function CarouselView() {
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const swipeContainerRef = useRef<HTMLDivElement>(null);
   const [hasSwiped, setHasSwiped] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const handleMobileScroll = () => {
     if (!swipeContainerRef.current) return;
@@ -115,6 +116,7 @@ export default function CarouselView() {
 
   // Track viewport size to handle mobile vs desktop layout
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -275,6 +277,10 @@ export default function CarouselView() {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, [isMobile]);
+
+  if (!mounted) {
+    return <div className="w-full min-h-screen bg-transparent" id="app-tour" />;
+  }
 
   return (
     <div className="w-full bg-transparent text-white overflow-x-hidden font-sans relative">
