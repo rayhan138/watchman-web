@@ -96,6 +96,7 @@ export default function CarouselView() {
   const [isMobile, setIsMobile] = useState(false);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const swipeContainerRef = useRef<HTMLDivElement>(null);
+  const [hasSwiped, setHasSwiped] = useState(false);
 
   const handleMobileScroll = () => {
     if (!swipeContainerRef.current) return;
@@ -106,6 +107,9 @@ export default function CarouselView() {
       const cardWidth = card.clientWidth + 20; // card width + gap spacing
       const index = Math.round(scrollLeft / cardWidth);
       setMobileActiveIndex(Math.max(0, Math.min(tabs.length - 1, index)));
+    }
+    if (scrollLeft > 20) {
+      setHasSwiped(true);
     }
   };
 
@@ -292,38 +296,73 @@ export default function CarouselView() {
             </h2>
           </div>
 
-          {/* Swipe Container */}
-          <div 
-            ref={swipeContainerRef}
-            onScroll={handleMobileScroll}
-            className="w-full flex gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 px-[10vw]"
-            style={{ scrollBehavior: "smooth" }}
-          >
-            {tabs.map((tab, idx) => {
-              const isActive = mobileActiveIndex === idx;
-              return (
-                <div
-                  key={tab.id}
-                  className="w-[80vw] max-w-[320px] shrink-0 snap-center flex flex-col relative p-0"
-                >
-                  {/* Mockup Frame - Free & scaled larger */}
-                  <div className="w-full flex justify-center h-[435px] relative overflow-visible mb-6">
-                    <div className="absolute transform scale-[0.55] origin-top h-[782px] w-[522px] pointer-events-none">
-                      {tab.component(isActive)}
+          {/* Swipe Container Wrapper */}
+          <div className="relative w-full">
+            <div 
+              ref={swipeContainerRef}
+              onScroll={handleMobileScroll}
+              className="w-full flex gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 px-[10vw]"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              {tabs.map((tab, idx) => {
+                const isActive = mobileActiveIndex === idx;
+                return (
+                  <div
+                    key={tab.id}
+                    className="w-[80vw] max-w-[320px] shrink-0 snap-center flex flex-col relative p-0"
+                  >
+                    {/* Mockup Frame - Free & scaled larger */}
+                    <div className="w-full flex justify-center h-[435px] relative overflow-visible mb-6">
+                      <div className="absolute transform scale-[0.55] origin-top h-[782px] w-[522px] pointer-events-none">
+                        {tab.component(isActive)}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Tab Title */}
-                  <h3 className="text-2xl font-play font-bold text-white mb-2 tracking-tight">
-                    {tab.title}
-                  </h3>
-                  {/* Tab Body */}
-                  <p className="text-neutral-400 text-sm leading-relaxed">
-                    {tab.body}
-                  </p>
-                </div>
-              );
-            })}
+                    {/* Tab Title */}
+                    <h3 className="text-2xl font-play font-bold text-white mb-2 tracking-tight">
+                      {tab.title}
+                    </h3>
+                    {/* Tab Body */}
+                    <p className="text-neutral-400 text-sm leading-relaxed">
+                      {tab.body}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Gesture Hint overlay */}
+            {!hasSwiped && (
+              <div className="absolute top-[180px] left-1/2 -translate-x-1/2 z-30 pointer-events-none bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-full flex items-center gap-3 shadow-[0_4px_24px_rgba(0,0,0,0.6)] transition-all duration-500">
+                <style dangerouslySetInnerHTML={{ __html: `
+                  @keyframes swipe-hint {
+                    0%, 100% { transform: translateX(8px); }
+                    50% { transform: translateX(-8px); }
+                  }
+                `}} />
+                {/* Hand pointing finger icon doing horizontal swipe animation */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#10b981"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="animate-[swipe-hint_1.5s_ease-in-out_infinite]"
+                >
+                  <path d="M12 12V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                  <path d="M6 12V7.5a1.5 1.5 0 0 0-1.5-1.5v0A1.5 1.5 0 0 0 3 7.5V12" />
+                  <path d="M18 12V9.5a1.5 1.5 0 0 0-1.5-1.5v0A1.5 1.5 0 0 0 15 9.5V12" />
+                  <path d="M22 13a6 6 0 0 1-6 6h-6a8 8 0 0 1-8-8v-1a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2" />
+                </svg>
+                <span className="text-[10px] font-bold text-white/90 tracking-wider uppercase whitespace-nowrap">
+                  Swipe Left/Right
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Swipe indicator dots */}
