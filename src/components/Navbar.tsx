@@ -227,6 +227,7 @@ export default function Navbar() {
             className="text-white/50 hover:text-white transition-colors p-1"
             aria-label="GitHub Repository"
           >
+            <span className="sr-only">GitHub Repository</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -269,6 +270,7 @@ export default function Navbar() {
             className="text-white/50 hover:text-white transition-colors p-1"
             aria-label="GitHub Repository"
           >
+            <span className="sr-only">GitHub Repository</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -286,6 +288,7 @@ export default function Navbar() {
             className="text-emerald-400 hover:text-emerald-300 transition-colors p-1"
             aria-label="Download Watchman"
           >
+            <span className="sr-only">Download Watchman</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
@@ -309,6 +312,7 @@ export default function Navbar() {
             className="text-white/60 hover:text-white transition-colors p-1 rounded-full hover:bg-white/[0.06]"
             aria-label="Open navigation menu"
           >
+            <span className="sr-only">Open navigation menu</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -343,6 +347,7 @@ export default function Navbar() {
               className="absolute top-8 right-8 text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
               aria-label="Close navigation menu"
             >
+              <span className="sr-only">Close navigation menu</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>

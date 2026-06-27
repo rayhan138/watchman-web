@@ -68,7 +68,7 @@ export default function PreferencesMockup() {
             {/* Header */}
             <div className="flex items-center justify-between mb-[16px]">
               <h2 className="text-[16px] font-[800] text-[#111] tracking-[0.5px]">Preferences</h2>
-              <button aria-label="Close preferences" className="text-[#111] hover:bg-black/5 p-[4px] -mr-[4px] rounded-full transition-colors"><X size={16} strokeWidth={2.5}/></button>
+              <button aria-label="Close preferences" className="text-[#111] hover:bg-black/5 p-[4px] -mr-[4px] rounded-full transition-colors"><span className="sr-only">Close preferences</span><X size={16} strokeWidth={2.5}/></button>
             </div>
 
             {/* Top Toggles */}
