@@ -93,9 +93,40 @@ export default function CarouselView() {
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+  const swipeContainerRef = useRef<HTMLDivElement>(null);
+  const [hasSwiped, setHasSwiped] = useState(false);
 
-  // Initialize Lenis for smooth scrolling
+  const handleMobileScroll = () => {
+    if (!swipeContainerRef.current) return;
+    const container = swipeContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    if (container.children.length > 0) {
+      const card = container.children[0] as HTMLElement;
+      const cardWidth = card.clientWidth + 20; // card width + gap spacing
+      const index = Math.round(scrollLeft / cardWidth);
+      setMobileActiveIndex(Math.max(0, Math.min(tabs.length - 1, index)));
+    }
+    if (scrollLeft > 20) {
+      setHasSwiped(true);
+    }
+  };
+
+  // Track viewport size to handle mobile vs desktop layout
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Initialize Lenis for smooth scrolling (Desktop ONLY)
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -119,14 +150,14 @@ export default function CarouselView() {
     };
   }, []);
 
-  // Initialize GSAP ScrollTrigger for Mockups ONLY
+  // Initialize GSAP ScrollTrigger for Mockups ONLY (Desktop ONLY)
   useEffect(() => {
+    if (window.innerWidth < 768) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const images = imagesRef.current.filter(Boolean);
     const totalItems = images.length;
-
-    const isMobile = window.innerWidth < 768;
 
     const getStyleForPosition = (pos: number) => {
       if (pos === 0) {
@@ -253,115 +284,217 @@ export default function CarouselView() {
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen"></div>
       </div>
 
+      {isMobile ? (
+        <div className="py-20 px-4 relative z-10 flex flex-col items-center select-none w-full">
+          {/* Header */}
+          <div className="text-center mb-10 px-6">
+            <span className="inline-block px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              App Tour
+            </span>
+            <h2 className="text-3xl font-play font-bold text-white tracking-tight">
+              Explore Watchman
+            </h2>
+          </div>
 
-
-      <section ref={showcaseRef} className="h-screen w-screen relative flex flex-col md:flex-row items-center overflow-hidden z-10">
-        
-        {/* Left Side: Arc Images */}
-        <div className="relative w-full md:w-[55%] h-[55%] md:h-full flex justify-center items-center pointer-events-none md:mt-0 mt-8">
-          {tabs.map((tab, index) => (
-            <div
-              key={tab.id}
-              ref={el => { imagesRef.current[index] = el; }}
-              className="absolute w-[450px] transform-origin-center will-change-transform rounded-[16px] shadow-[0_25px_50px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)]"
+          {/* Swipe Container Wrapper */}
+          <div className="relative w-full">
+            <div 
+              ref={swipeContainerRef}
+              onScroll={handleMobileScroll}
+              className="w-full flex gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 px-[10vw]"
+              style={{ scrollBehavior: "smooth" }}
             >
-              {/* Pointer events only on the center active component */}
-              <div className="pointer-events-auto">
-                {tab.component(activeIndex === index)}
-              </div>
-            </div>
-          ))}
-        </div>
+              {tabs.map((tab, idx) => {
+                const isActive = mobileActiveIndex === idx;
+                return (
+                  <div
+                    key={tab.id}
+                    className="w-[80vw] max-w-[320px] shrink-0 snap-center flex flex-col relative p-0"
+                  >
+                    {/* Mockup Frame - Free & scaled larger */}
+                    <div className="w-full flex justify-center h-[435px] relative overflow-visible mb-6">
+                      <div className="absolute transform scale-[0.55] origin-top h-[782px] w-[522px] pointer-events-none">
+                        {tab.component(isActive)}
+                      </div>
+                    </div>
 
-        {/* Right Side: Premium Pagination Dots */}
-        <div className="fixed right-4 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center z-50">
-          <div className="relative flex flex-col gap-[12px]">
-            {/* Background Track Dots */}
-            {tabs.map((tab, index) => (
+                    {/* Tab Title */}
+                    <h3 className="text-2xl font-play font-bold text-white mb-2 tracking-tight">
+                      {tab.title}
+                    </h3>
+                    {/* Tab Body */}
+                    <p className="text-neutral-400 text-sm leading-relaxed">
+                      {tab.body}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Gesture Hint overlay */}
+            {!hasSwiped && (
+              <div className="absolute top-[180px] left-1/2 -translate-x-1/2 z-30 pointer-events-none bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-full flex items-center gap-3 shadow-[0_4px_24px_rgba(0,0,0,0.6)] transition-all duration-500">
+                <style dangerouslySetInnerHTML={{ __html: `
+                  @keyframes swipe-hint {
+                    0%, 100% { transform: translateX(8px); }
+                    50% { transform: translateX(-8px); }
+                  }
+                `}} />
+                {/* Hand pointing finger icon doing horizontal swipe animation */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#10b981"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="animate-[swipe-hint_1.5s_ease-in-out_infinite]"
+                >
+                  <path d="M12 12V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                  <path d="M6 12V7.5a1.5 1.5 0 0 0-1.5-1.5v0A1.5 1.5 0 0 0 3 7.5V12" />
+                  <path d="M18 12V9.5a1.5 1.5 0 0 0-1.5-1.5v0A1.5 1.5 0 0 0 15 9.5V12" />
+                  <path d="M22 13a6 6 0 0 1-6 6h-6a8 8 0 0 1-8-8v-1a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2" />
+                </svg>
+                <span className="text-[10px] font-bold text-white/90 tracking-wider uppercase whitespace-nowrap">
+                  Swipe Left/Right
+                </span>
+              </div>
+            )}
+          </div>
+
+          {/* Swipe indicator dots */}
+          <div className="flex gap-2.5 mt-8 justify-center">
+            {tabs.map((tab, idx) => (
               <button
-                key={`bg-${tab.id}`}
+                key={`indicator-${tab.id}`}
                 onClick={() => {
-                  const scrollY = (index / (tabs.length - 1)) * 5000;
-                  window.scrollTo({ top: scrollY, behavior: 'smooth' });
+                  if (swipeContainerRef.current) {
+                    const container = swipeContainerRef.current;
+                    const card = container.children[idx] as HTMLElement;
+                    if (card) {
+                      container.scrollTo({
+                        left: card.offsetLeft - (container.clientWidth - card.clientWidth) / 2,
+                        behavior: "smooth"
+                      });
+                    }
+                  }
                 }}
-                className="w-[6px] h-[6px] rounded-full bg-white/20 transition-all duration-300 hover:bg-white/40 cursor-pointer"
-                aria-label={`Go to ${tab.title}`}
+                className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${mobileActiveIndex === idx ? "bg-emerald-400 w-6" : "bg-white/20 w-2"}`}
+                aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
-            
-            {/* Active Sliding Glowing Pill */}
-            <div 
-              className="absolute w-[6px] h-[24px] rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none"
-              style={{ top: `calc(${activeIndex * 18}px - 9px)` }}
-            />
           </div>
         </div>
-
-        {/* Right Side: Text (Driven by React State) */}
-        <div className="w-full md:w-[45%] px-6 md:px-0 md:pr-[5%] relative h-[45%] md:h-[80%] pointer-events-none pb-12 md:pb-0 flex items-center md:block">
-          {tabs.map((tab, index) => {
-            const isActive = activeIndex === index;
-            return (
+      ) : (
+        <section ref={showcaseRef} className="h-screen w-screen relative flex flex-col md:flex-row items-center overflow-hidden z-10">
+          
+          {/* Left Side: Arc Images */}
+          <div className="relative w-full md:w-[55%] h-[55%] md:h-full flex justify-center items-center pointer-events-none md:mt-0 mt-8">
+            {tabs.map((tab, index) => (
               <div
-                key={`text-${tab.id}`}
-                className={`absolute top-[15%] left-0 w-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-8 invisible pointer-events-none'}`}
+                key={tab.id}
+                ref={el => { imagesRef.current[index] = el; }}
+                className="absolute w-[450px] transform-origin-center will-change-transform rounded-[16px] shadow-[0_25px_50px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)]"
               >
-                <div className="text-emerald-400 text-sm font-bold tracking-[0.3em] uppercase mb-4">App Tour</div>
-                <h2 className="text-6xl font-play font-bold text-white mb-6 tracking-tight drop-shadow-lg">
-                  {tab.title}
-                </h2>
-                <p className="text-xl leading-relaxed text-white/80 font-[500] max-w-[500px] mb-10">
-                  {tab.body}
-                </p>
-
-                {/* Features Card Container (BlinkEye Style) */}
-                <div className="bg-[#0f121a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-6 max-w-[550px] shadow-2xl relative overflow-hidden">
-                   {/* Top Badge */}
-                   <div className="text-[10px] font-bold text-white/70 uppercase tracking-wider mb-2 px-3 py-1 bg-white/10 rounded-full w-fit">
-                     Key Features
-                   </div>
-                   
-                   {/* Feature Pills Grid */}
-                   <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 mt-4">
-                     {tab.features.map((feature, i) => (
-                       <div key={i} className="flex items-center gap-3 bg-[#1a1f2c] border border-white/5 hover:border-emerald-500/30 transition-colors rounded-xl px-4 py-3 shadow-inner">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                          <span className="text-[13px] font-semibold text-white/90 leading-snug">{feature}</span>
-                       </div>
-                     ))}
-                   </div>
+                {/* Pointer events only on the center active component */}
+                <div className="pointer-events-auto">
+                  {tab.component(activeIndex === index)}
                 </div>
-
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        {/* Scroll to Top Button (Visible on all slides except the first) */}
-        <div className={`fixed bottom-12 right-12 z-50 transition-all duration-500 ease-out ${activeIndex > 0 ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-4 invisible pointer-events-none'}`}>
-          <button 
-            onClick={() => {
-              if (lenisInstance) {
-                lenisInstance.scrollTo(0, { duration: 1.5 });
-              } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }
-            }}
-            className="flex items-center gap-2 px-5 py-3 bg-[#1a1f2c] hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/50 rounded-full text-white/80 hover:text-white transition-all shadow-[0_0_20px_rgba(16,185,129,0.1)] group"
-            aria-label="Back to Top"
-          >
-            <span className="text-[11px] font-bold tracking-widest uppercase">Back to Top</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
-              <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-          </button>
-        </div>
+          {/* Right Side: Premium Pagination Dots */}
+          <div className="fixed right-4 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center z-50">
+            <div className="relative flex flex-col gap-[12px]">
+              {/* Background Track Dots */}
+              {tabs.map((tab, index) => (
+                <button
+                  key={`bg-${tab.id}`}
+                  onClick={() => {
+                    const scrollY = (index / (tabs.length - 1)) * 5000;
+                    window.scrollTo({ top: scrollY, behavior: 'smooth' });
+                  }}
+                  className="w-[6px] h-[6px] rounded-full bg-white/20 transition-all duration-300 hover:bg-white/40 cursor-pointer"
+                  aria-label={`Go to ${tab.title}`}
+                />
+              ))}
+              
+              {/* Active Sliding Glowing Pill */}
+              <div 
+                className="absolute w-[6px] h-[24px] rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none"
+                style={{ top: `calc(${activeIndex * 18}px - 9px)` }}
+              />
+            </div>
+          </div>
 
-      </section>
+          {/* Right Side: Text (Driven by React State) */}
+          <div className="w-full md:w-[45%] px-6 md:px-0 md:pr-[5%] relative h-[45%] md:h-[80%] pointer-events-none pb-12 md:pb-0 flex items-center md:block">
+            {tabs.map((tab, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <div
+                  key={`text-${tab.id}`}
+                  className={`absolute top-[15%] left-0 w-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-8 invisible pointer-events-none'}`}
+                >
+                  <div className="text-emerald-400 text-sm font-bold tracking-[0.3em] uppercase mb-4">App Tour</div>
+                  <h2 className="text-6xl font-play font-bold text-white mb-6 tracking-tight drop-shadow-lg">
+                    {tab.title}
+                  </h2>
+                  <p className="text-xl leading-relaxed text-white/80 font-[500] max-w-[500px] mb-10">
+                    {tab.body}
+                  </p>
 
+                  {/* Features Card Container (BlinkEye Style) */}
+                  <div className="bg-[#0f121a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-6 max-w-[550px] shadow-2xl relative overflow-hidden">
+                     {/* Top Badge */}
+                     <div className="text-[10px] font-bold text-white/70 uppercase tracking-wider mb-2 px-3 py-1 bg-white/10 rounded-full w-fit">
+                       Key Features
+                     </div>
+                     
+                     {/* Feature Pills Grid */}
+                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 mt-4">
+                       {tab.features.map((feature, i) => (
+                         <div key={i} className="flex items-center gap-3 bg-[#1a1f2c] border border-white/5 hover:border-emerald-500/30 transition-colors rounded-xl px-4 py-3 shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span className="text-[13px] font-semibold text-white/90 leading-snug">{feature}</span>
+                         </div>
+                       ))}
+                     </div>
+                  </div>
 
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Scroll to Top Button (Visible on all slides except the first) */}
+          <div className={`fixed bottom-12 right-12 z-50 transition-all duration-500 ease-out ${activeIndex > 0 ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 translate-y-4 invisible pointer-events-none'}`}>
+            <button 
+              onClick={() => {
+                if (lenisInstance) {
+                  lenisInstance.scrollTo(0, { duration: 1.5 });
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+              className="flex items-center gap-2 px-5 py-3 bg-[#1a1f2c] hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/50 rounded-full text-white/80 hover:text-white transition-all shadow-[0_0_20px_rgba(16,185,129,0.1)] group"
+              aria-label="Back to Top"
+            >
+              <span className="text-[11px] font-bold tracking-widest uppercase">Back to Top</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+          </div>
+
+        </section>
+      )}
 
     </div>
   );

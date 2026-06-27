@@ -62,7 +62,7 @@ export default function Privacy() {
   return (
     <section
       id="privacy"
-      className="py-32 relative z-10"
+      className="py-16 sm:py-32 relative z-10"
       style={{
         background:
           "linear-gradient(180deg, #050505 0%, #070d0a 50%, #050505 100%)",
@@ -84,7 +84,7 @@ export default function Privacy() {
         <h2 className="text-5xl md:text-7xl font-black mb-8 text-white tracking-tight">
           Your PC. Your Data.
         </h2>
-        <p className="text-xl text-neutral-400 leading-relaxed mb-16 max-w-2xl mx-auto">
+        <p className="text-xl text-neutral-400 leading-relaxed mb-10 sm:mb-16 max-w-2xl mx-auto">
           Watchman is an old-school Windows utility built with modern tech.{" "}
           <br />
           <strong className="text-emerald-400">
@@ -101,7 +101,7 @@ export default function Privacy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className={`group relative bg-white/[0.03] backdrop-blur-md border ${item.borderColor} p-8 rounded-2xl hover:border-white/15 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden`}
+              className={`group relative bg-white/[0.03] backdrop-blur-md border ${item.borderColor} p-5 sm:p-8 rounded-2xl hover:border-white/15 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden`}
             >
               {/* Accent line at top */}
               <div
@@ -118,7 +118,7 @@ export default function Privacy() {
 
               {/* Icon */}
               <div
-                className={`relative w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center ${item.iconColor} mb-6 transition-transform duration-500 group-hover:scale-110`}
+                className={`relative w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center ${item.iconColor} mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110`}
               >
                 {item.icon}
               </div>
