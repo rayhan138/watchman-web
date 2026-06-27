@@ -127,7 +127,7 @@ export default function CarouselView() {
 
   // Initialize Lenis for smooth scrolling (Desktop ONLY)
   useEffect(() => {
-    if (isMobile) return;
+    if (!mounted || isMobile) return;
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -150,11 +150,11 @@ export default function CarouselView() {
     return () => {
       lenis.destroy();
     };
-  }, [isMobile]);
+  }, [isMobile, mounted]);
 
   // Initialize GSAP ScrollTrigger for Mockups ONLY (Desktop ONLY)
   useEffect(() => {
-    if (isMobile) return;
+    if (!mounted || isMobile) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -276,7 +276,7 @@ export default function CarouselView() {
       ctx.revert();
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
-  }, [isMobile]);
+  }, [isMobile, mounted]);
 
   if (!mounted) {
     return <div className="w-full min-h-screen bg-transparent" id="app-tour" />;
