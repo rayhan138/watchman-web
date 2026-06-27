@@ -150,9 +150,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.1, ease: "easeOut", delay: 0.4 }}
-          className="relative hero-float mt-12 lg:mt-0 flex justify-center lg:justify-end w-full"
+          className="relative hero-float mt-12 lg:mt-0 hidden lg:flex justify-center lg:justify-end w-full"
         >
-          <div className="relative transform scale-[0.55] sm:scale-[0.7] md:scale-90 lg:scale-100 origin-center lg:origin-right flex justify-center w-[600px] lg:w-full">
+          <div className="relative flex justify-center w-full max-w-[600px] lg:max-w-none lg:overflow-visible overflow-hidden">
             <WindowsTaskbarMockup embedded={true} autoPlay={true} />
           </div>
         </motion.div>

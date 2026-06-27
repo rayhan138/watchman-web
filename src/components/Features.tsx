@@ -111,7 +111,7 @@ const cardVariants = {
 
 export default function Features() {
   return (
-    <section className="relative py-28 z-10 overflow-hidden">
+    <section className="relative py-14 sm:py-28 z-10 overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -122,7 +122,7 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/60 text-xs font-bold tracking-[0.3em] uppercase mb-6">
             Why Watchman
@@ -145,10 +145,10 @@ export default function Features() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
-              className={`group relative rounded-2xl border ${feature.borderColor} bg-gradient-to-b ${feature.color} backdrop-blur-sm p-7 transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] hover:-translate-y-1`}
+              className={`group relative rounded-2xl border ${feature.borderColor} bg-gradient-to-b ${feature.color} backdrop-blur-sm p-5 sm:p-7 transition-all duration-500 hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.03)] hover:-translate-y-1`}
             >
               {/* Icon */}
-              <div className={`${feature.iconColor} mb-5 transition-transform duration-500 group-hover:scale-110`}>
+              <div className={`${feature.iconColor} mb-3 sm:mb-5 transition-transform duration-500 group-hover:scale-110`}>
                 {feature.icon}
               </div>
 

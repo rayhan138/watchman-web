@@ -47,9 +47,19 @@ export default function WindowsTaskbarMockup({
   const [ripples, setRipples] = useState<number[]>([]);
   const [hoverState, setHoverState] = useState<string | null>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   // Simulate live network/system activity
@@ -439,7 +449,7 @@ export default function WindowsTaskbarMockup({
   return (
     <div 
       id="mockup-container"
-      className={`w-full ${embedded ? 'h-[600px] bg-transparent' : 'h-screen bg-[#0a0a0a] overflow-hidden'} flex items-center justify-center relative scale-[1.2] origin-center`} 
+      className={`w-full ${embedded ? 'h-[320px] sm:h-[480px] md:h-[600px] bg-transparent' : 'h-screen bg-[#0a0a0a] overflow-hidden'} flex items-center justify-center relative scale-[0.65] sm:scale-[0.85] md:scale-[1.2] origin-center`} 
       onContextMenu={(e) => { if (!menuPosition && !trayMenuPosition) e.preventDefault(); }}
     >
       {/* Removed old DemoText block entirely, cursor has the tail now */}
@@ -450,11 +460,11 @@ export default function WindowsTaskbarMockup({
         {isDataWindowOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.5, x: "-50%", y: "-50%", filter: "blur(20px)" }}
-            animate={{ opacity: 1, scale: 0.75, x: "-50%", y: "-50%", filter: "blur(0px)" }}
+            animate={{ opacity: 1, scale: isMobile ? 0.6 : 0.75, x: "-50%", y: "-50%", filter: "blur(0px)" }}
             exit={{ opacity: 0, scale: 0.5, x: "-50%", y: "-50%", filter: "blur(20px)", transition: { duration: 0.2 } }}
             transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
             className="absolute z-50 pointer-events-none top-1/2 drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
-            style={{ left: "calc(50% + 80px)" }} // Shifted 80px right to perfectly align with the taskbar's translate-x-20
+            style={{ left: isMobile ? "50%" : "calc(50% + 80px)" }} // Center-aligned on mobile, shifted 80px right on desktop
           >
             <DataMockup isActive={isDataWindowOpen} />
           </motion.div>
@@ -462,7 +472,7 @@ export default function WindowsTaskbarMockup({
       </AnimatePresence>
 
       {/* Taskbar Wrapper for Tracking Glow Alignment */}
-      <div className="relative z-10 translate-x-20 flex items-center">
+      <div className={`relative z-10 flex items-center ${isMobile ? "" : "translate-x-20"}`}>
         
         {/* Dynamic Color Change Text */}
         <AnimatePresence>

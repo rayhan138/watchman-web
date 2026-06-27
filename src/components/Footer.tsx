@@ -49,10 +49,10 @@ export default function Footer() {
         </div>
 
         {/* BlinkEye Promo Card */}
-        <div className="mt-12 bg-[#0c0c0d] border border-white/[0.05] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-white/[0.08] transition-all duration-300">
-          <div className="flex flex-col sm:flex-row items-start gap-5 max-w-4xl">
+        <div className="mt-12 bg-[#0c0c0d] border border-white/[0.05] rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:border-white/[0.08] transition-all duration-300">
+          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5 max-w-4xl">
             <div className="shrink-0 flex items-center justify-center">
-              <svg viewBox="0 0 100 100" className="w-14 h-14 select-none drop-shadow-[0_0_12px_rgba(255,77,90,0.22)]">
+              <svg viewBox="0 0 100 100" className="w-12 h-12 sm:w-14 sm:h-14 select-none drop-shadow-[0_0_12px_rgba(255,77,90,0.22)]">
                 <defs>
                   <filter id="eye-shadow" x="-20%" y="-20%" width="140%" height="140%">
                     <feDropShadow dx="0" dy="2.5" stdDeviation="1.5" floodColor="#000000" floodOpacity="0.18" />
@@ -96,8 +96,8 @@ export default function Footer() {
               <h3 className="font-play font-bold text-white text-base mb-1.5 tracking-wide flex items-center gap-2">
                 Also try BlinkEye
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
-                Prevent eye strain, improve posture, and stay productive with Blink Eye!{" "}
+              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
+                Prevent eye strain, improve posture, and stay productivity with Blink Eye!{" "}
                 <span className="text-red-400 font-semibold">Follow the 20-20-20 rule</span> with smart break
                 reminders, screen time tracking, and a built-in task manager—helping you work smarter and
                 feel better every day.
